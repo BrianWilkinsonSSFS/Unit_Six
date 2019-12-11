@@ -2,15 +2,16 @@ public class ArrayAlgorithms {
 
     public static String printArray(int[] nums) {
         String blank = "";
-        for (int i=0; i<nums.length; i++)
-            blank += nums[i] + " ";
+        for (int number: nums) {
+            blank += number + " ";
+        }
         return blank;
     }
 
     public static boolean checkForAllNegatives(int[] nums) {
 
-        for (int i=0; i<nums.length; i++) {
-            if (nums[i] >= 0)
+        for (int number: nums) {
+            if (number >= 0)
                 return false;
         }
         return true;
@@ -29,10 +30,9 @@ public class ArrayAlgorithms {
     public static int countEvens(int[] arr) {
         int numEvens = 0;
 
-        for (int i=0; i<arr.length; i++) {
-            if (arr[i] % 2 == 0) {
-                numEvens++;
-            }
+        for (int number: arr) {
+            if (number % 2 == 0)
+                    numEvens++;
         }
         return numEvens;
     }
