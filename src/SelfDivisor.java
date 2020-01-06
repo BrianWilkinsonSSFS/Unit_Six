@@ -1,5 +1,4 @@
-public class SelfDivisor
-{
+public class SelfDivisor {
 
     /** @param number the number to be tested
      *         Precondition: number > 0
@@ -29,19 +28,22 @@ public class SelfDivisor
      * @return an array containing the first num
      * integers >= start that are self-divisors
      */
-    public static int[] firstNumSelfDivisors(int start, int num)
-    {
-        int[] numSelfDivisors = new int[num];
-        int index = 0;
-        for (int i=0; i<num; i++) {
-            while(!isSelfDivisor(start)) {
-                start++;
+    public static int[] firstNumSelfDivisors(int start, int num){
+
+        int[] array = new int[num];
+        int n = 0;
+
+        while(n != num){
+            if(isSelfDivisor(start)){
+                array[n] = start;
+
+                n++;
             }
-            numSelfDivisors[i] = start;
+
             start++;
         }
-        return numSelfDivisors;
 
+        return array;
     }
 
     public static void main (String[] args)

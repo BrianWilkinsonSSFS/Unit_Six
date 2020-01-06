@@ -1,48 +1,39 @@
 public class TraverseArrays {
 
-    public static int countEven(int[] nums) {
-        int totalEvens = 0;
+    public static int countEven(int[] nums){
 
-        for (int i=0; i<nums.length; i++) {
-            if (nums[i] % 2 == 0)
-                totalEvens++;
+        int evenAmount = 0;
+
+        for(int n = 0; n < nums.length; n++){
+            if(nums[n] % 2 == 0)
+                evenAmount++;
         }
-        return totalEvens;
+        return evenAmount;
     }
+    public static int[] buildArray(int desiredLength){
 
-    public static int[] buildArray(int desiredLength) {
-        int[] newArray = new int[desiredLength];
-        for (int i=0; i<desiredLength; i++) {
-            newArray[i] = i;
-        }
-        return newArray;
+        int[] createdArray = new int[desiredLength];
+
+        for(int n = 0; n < createdArray.length; n++)
+            createdArray[n] = n;
+        return createdArray;
     }
+    public static boolean sum28(int[] numbers){
 
-    public static boolean sum28(int[] numbers) {
-        int sum2 = 0;
-        for (int i=0; i<numbers.length; i++) {
-            if (numbers[i] == 2)
-                sum2 += 2;
+        int total2 = 0;
+
+        for(int n = 0; n < numbers.length; n++){
+            if(numbers[n] == 2)
+                total2 += 2;
         }
-        return sum2 == 8;
+        return total2 == 8;
     }
+    public static int[] zeroMax(int[] original){
 
-    public static int[] zeroMax(int[] original) {
-        int[] newArray = new int[original.length];
-
-        for (int i=0; i<original.length; i++) {
-            if (original[i] == 0) {
-                int largestOdd = 0;
-                for (int j=i+1; j<original.length; j++) {
-                    if (original[j] %2 == 1 && original[j] > largestOdd)
-                        largestOdd = original[j];
-                }
-                newArray[i] = largestOdd;
-            }
-            else
-                newArray[i] = original[i];
+        for(int n = 1; n < original.length; n += 2){
+            if(original[n] % 2 != 0)
+                original[n - 1] = original[n];
         }
-        return newArray;
-
+        return original;
     }
 }

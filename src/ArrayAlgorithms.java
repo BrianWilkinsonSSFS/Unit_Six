@@ -1,69 +1,71 @@
 public class ArrayAlgorithms {
 
-    public static String printArray(int[] nums) {
-        String blank = "";
-        for (int number: nums) {
-            blank += number + " ";
-        }
-        return blank;
+    public static void main(String[] args){
+        int[] list1 = {-2 , -9 , -6 , -8 , -9 , -3 , -1};
     }
 
-    public static boolean checkForAllNegatives(int[] nums) {
-
-        for (int number: nums) {
-            if (number >= 0)
-                return false;
+    public static String printArray(int[] nums){
+        String str = "";
+        for(int a =0;a<nums.length;a++){
+            str += nums[a]+" ";
         }
-        return true;
+        return str;
     }
 
-    public static boolean hasDupes(int[] nums) {
-
-        for (int i=0; i< nums.length-1; i++) {
-            for (int j=i+1; j<nums.length; j++)
-                if (nums[i] == nums[j])
-                    return true;
+    public static boolean checkForAllNegatives(int[] list){
+        boolean str = true;
+        for(int a=0;a<list.length;a++){
+            if(list[a]>=0) {
+                str = false;
+            }
         }
-        return false;
+        return str;
     }
 
-    public static int countEvens(int[] arr) {
-        int numEvens = 0;
-
-        for (int number: arr) {
-            if (number % 2 == 0)
-                    numEvens++;
+    public static boolean hasDupes(int[] list){
+        boolean str = false;
+        for(int a=0;a<list.length;a++){
+            for(int j =a+1;j<list.length;j++){
+                if(list[a]==list[j]) {
+                    str = true;
+                }
+            }
         }
-        return numEvens;
+        return str;
     }
 
-    public static int[] leftShift(int[] nums, int shift) {
-        int newLength = nums.length + shift;
-        int[] newArr = new int[newLength];
-
-        for (int i=0; i<nums.length; i++) {
-            newArr[i] = nums[i];
+    public static int countEvens(int[] arr){
+        int even = 0;
+        for(int a=0;a<=arr.length-1;a++){
+            if(arr[a]%2==0){
+                even++;
+            }
         }
-
-        for (int j=nums.length; j<newLength; j++) {
-            newArr[j] = 0;
-        }
-        return newArr;
+        return even;
     }
 
-    public static String reverseArray(int[] nums) {
-        int start = 0;
-        int end = nums.length-1;
-
-        while (end >= start) {
-            int temp = nums[start];
-            nums[start] = nums[end];
-            nums[end] = temp;
-            start++;
-            end--;
-
+    public static int[] leftShift(int[] nums, int shift){
+        int[] num = new int[shift+nums.length];
+        for(int a=0;a<num.length;a++){
+            if(a<=nums.length-1) {
+                num[a] = nums[a];
+            }else{
+                num[a]=0;
+            }
         }
-
-        return printArray(nums);
+        return num;
     }
+
+    public static String reverseArray(int[] arr){
+        for(int a = 0; a < arr.length / 2; a++){
+            int first = arr[a];
+            int last = arr[arr.length - 1 - a];
+
+            arr[a] = last;
+            arr[arr.length - 1 - a] = first;
+        }
+        return printArray(arr);
+    }
+
+
 }

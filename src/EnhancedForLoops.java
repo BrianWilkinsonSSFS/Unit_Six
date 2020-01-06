@@ -1,101 +1,89 @@
 public class EnhancedForLoops {
 
-    public static String printStandardFor(String[] arr) {
-        String returnArr = "";
+    public static String printStandardFor(String[] arr){
 
-        for (int i=0; i<arr.length; i++)
-            returnArr += arr[i] + " ";
+        String RS = "";
 
-
-        return returnArr;
+        for(int n = 0; n < arr.length; n++)
+            RS += arr[n] + " ";
+        return RS;
     }
+    public static String printStandardFor(int[] arr){
 
-    public static String printStandardFor(int[] arr) {
+        String RS = "";
 
-        String returnArr = "";
-        for (int i=0; i<arr.length; i++)
-            returnArr += arr[i] + " ";
-
-
-        return returnArr;
+        for(int n = 0; n < arr.length; n++)
+            RS += arr[n] + " ";
+        return RS;
     }
+    public static String printStandardFor(double[] arr){
 
-    public static String printStandardFor(double[] arr) {
-        String returnArr = "";
-        for (int i=0; i<arr.length; i++)
-            returnArr += arr[i] + " ";
+        String RS = "";
 
-
-        return returnArr;
+        for(int n = 0; n < arr.length; n++)
+            RS += arr[n] + " ";
+        return RS;
     }
+    public static String printEnhancedFor(String[] arr){
 
-    public static String printEnhancedFor(String[] arr) {
-        String returnArr = "";
+        String RS = "";
 
-        for (String str: arr)
-            returnArr += str + " ";
-
-
-        return returnArr;
+        for(String x:arr){
+            RS += x + " ";
+        }
+        return RS;
     }
-
     public static String printEnhancedFor(int[] arr){
-        String returnArr = "";
 
-        for (int num: arr)
-            returnArr += num + " ";
+        String RS = "";
 
-
-        return returnArr;
-    }
-
-    public static String printEnhancedFor(double[] arr) {
-        String returnArr = "";
-
-        for (double num: arr)
-            returnArr += num + " ";
-
-
-        return returnArr;
-    }
-
-    public static String printStandardWhile(String[] arr) {
-        String returnArr = "";
-        int i = 0;
-        while (i < arr.length) {
-            returnArr += arr[i] + " ";
-            i++;
+        for(int x:arr){
+            RS += x + " ";
         }
-
-
-        return returnArr;
+        return RS;
     }
+    public static String printEnhancedFor(double[] arr){
 
-    public static String printStandardWhile(int[] arr) {
-        String returnArr = "";
-        int i = 0;
-        while (i < arr.length) {
-            returnArr += arr[i] + " ";
-            i++;
+        String RS = "";
+
+        for(double x:arr){
+            RS += x + " ";
         }
-
-
-        return returnArr;
+        return RS;
     }
+    public static String printStandardWhile(String[] arr){
 
-    public static String printStandardWhile(double[] arr) {
-        String returnArr = "";
-        int i = 0;
-        while (i < arr.length) {
-            returnArr += arr[i] + " ";
-            i++;
+        int n = 0;
+        String RS = "";
+
+        while(n < arr.length) {
+            RS += arr[n] + " ";
+            n++;
         }
+        return RS;
+    }
+    public static String printStandardWhile(int[] arr){
 
+        int n = 0;
+        String RS = "";
 
-        return returnArr;
+        while(n < arr.length) {
+            RS += arr[n] + " ";
+            n++;
+        }
+        return RS;
+    }
+    public static String printStandardWhile(double[] arr){
+
+        int n = 0;
+        String RS = "";
+
+        while(n < arr.length) {
+            RS += arr[n] + " ";
+            n++;
+        }
+        return RS;
     }
 
-    public static void main(String[] args) {
 
-    }
 }
